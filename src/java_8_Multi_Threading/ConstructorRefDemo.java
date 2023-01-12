@@ -16,9 +16,17 @@ class Sample{
 public class ConstructorRefDemo {
 	interface Interf{
 		public Sample getString(int i);
+		
+		public static void m1() {
+			System.out.println("ajay sisode");
+		}
 	}
 	public static void main(String[] args) {
-		Interf i=s->new Sample(0);
-		System.out.println(i.toString());
+		Interf i=s->new Sample(10);
+		System.out.println(i);
+		
+		Runnable r=Interf::m1;
+		Thread t1=new Thread(r);
+		t1.start();
 	}
 }

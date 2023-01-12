@@ -14,6 +14,7 @@ public class PrintFirstNoNRepeatedChar
 		.codePoints()
 		.mapToObj(x->(char)x)
 		.collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()))
+		//.collect(Collectors.groupingBy(x->x,Collectors.counting()))
 		.entrySet()
 		.stream()
 		.filter(x->x.getValue()==1L)
